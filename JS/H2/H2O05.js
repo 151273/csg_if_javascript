@@ -3,6 +3,7 @@ var aantalKolommenRaster = 9;
 var celGrootte;
 
 var spriteJos;
+var brug;
 var xJos;
 var yJos;
 
@@ -18,21 +19,19 @@ function setup() {
 }
 
 function draw() {
-  
+  background(brug);
   tekenRaster();
 }
 
 function tekenRaster() {
   push();
+  for(var rij = 0; rij < aantalRijenRaster; rij++) {
+    rect(kolom*celGrootte,rij*celGrootte,celGrootte,celGrootte);  
+  }
+  for(var kolom = 0; kolom < aantalKolommenRaster; kolom++) {
+    rect(kolom*celgrootte,rij*celGrootte,celGrootte,celGrootte);
+  }
   noFill();
   stroke('grey');
-  /*
-  Maak hieronder een dubbele herhaling om een raster te maken.
-  HINT: je kunt terugkijken naar het raster dat je in H1 hebt gemaakt.
-  Maak gebruik van de variabelen die bovenaan zijn gedeclareerd.
-  */
-  
-      rect(4*celGrootte,2*celGrootte,celGrootte,celGrootte);
-
   pop();
 }

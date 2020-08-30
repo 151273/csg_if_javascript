@@ -4,7 +4,6 @@ function preload() {
   kater = loadImage("images/brieck.jpg");
   toren = loadImage("images/toren.jpg");
   piano = loadImage("images/piano.jpg");
-
 }
 
 function setup() {
@@ -16,9 +15,6 @@ function setup() {
   textFont("Verdana");
   textSize(14);
   noStroke();
-  rect(25,25,250,250);
-  rect(300,25,250,250);
-  rect(575,25,250,250);
 }
 
 function draw() {

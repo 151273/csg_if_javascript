@@ -14,9 +14,10 @@ function setup() {
 function draw() {
   tekenAchtergrond();
 
-  
+  for(var huisNummers = 0;huisNummers < 23;huisNummers =+2);  {
     tekenHuis(kleur,13);
-    translate(150,0);
+    translate(150,0);  
+  }
 
 }
 
