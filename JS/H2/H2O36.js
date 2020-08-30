@@ -3,7 +3,7 @@ class Boom {
   this.leeftijd = round(random(1,5));
   this.R = random(100,200);
   this.G = 155;
-  this.B = random(0,100);
+  this.B = randomm(0,100);
   this.x = random(50,720);
   }
   
