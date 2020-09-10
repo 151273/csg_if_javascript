@@ -9,6 +9,29 @@ var frame;
 var xJos = 400;
 var yJos = 300;
 
+var object = {
+aantalrijen: null,
+aantalKolommen: 6,
+celGrootte: 6,
+
+berekenCelGrootte() {
+    this.celGrootte = width/this.aantalKolommen;
+}
+
+teken() {
+    push();
+  noFill();
+  stroke('grey');
+  for (var rij = 0;rij < aantalRijenRaster;rij++) {
+    for (var kolom = 0;kolom < aantalKolommenRaster;kolom++) {
+      rect(kolom*celGrootte,rij*celGrootte,celGrootte,celGrootte);
+    }
+  }
+  pop();
+}
+}
+
+
 function preload() {
   brug = loadImage("images/backgrounds/dame_op_brug_1800.jpg");
   for (var b = 0;b < aantalBeeldjes;b++) {
@@ -22,6 +45,7 @@ function setup() {
   canvas.parent('processing');
   frameRate(10);
   celGrootte = width / aantalKolommenRaster;
+  raster.berekenCelGrootte();
 }
 
 function draw() {
@@ -51,14 +75,3 @@ function draw() {
   image(animatie[nummer],xJos,yJos,celGrootte,celGrootte);
 }
 
-function tekenRaster() {
-  push();
-  noFill();
-  stroke('grey');
-  for (var rij = 0;rij < aantalRijenRaster;rij++) {
-    for (var kolom = 0;kolom < aantalKolommenRaster;kolom++) {
-      rect(kolom*celGrootte,rij*celGrootte,celGrootte,celGrootte);
-    }
-  }
-  pop();
-}
