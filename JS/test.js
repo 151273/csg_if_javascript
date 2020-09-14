@@ -22,12 +22,31 @@ beweeg() {
 
     }
 },
+    
+
     teken() {
         ellipse(this.x,this.y,this.diameter);
-        fill('red');
+        fill('pink');
+        noStroke();
     }
 
 };
+
+var eiland = {
+    x: 450,
+    y: 450,
+    diameter: 150,
+
+
+    teken() {
+        ellipse(this.x,this.y,this.diameter);
+        fill('white');
+       
+    }
+
+
+};
+
 
 function setup() {
     canvas = createCanvas(450,450);
@@ -37,4 +56,7 @@ function draw() {
     background('grey');
     stipje.teken();
     stipje.beweeg();
+    eiland.teken();
+    eiland.beweeg();
+    eiland.wordtBezocht(stipje);
 }
