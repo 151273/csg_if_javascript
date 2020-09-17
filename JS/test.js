@@ -1,7 +1,7 @@
 var stipje = {
  x: 225,
  y: 225,
-diameter: 100,
+diameter: 150,
 
 beweeg() {
     
@@ -25,8 +25,8 @@ beweeg() {
     
 
     teken() {
-        ellipse(this.x,this.y,this.diameter);
         fill('pink');
+        ellipse(this.x,this.y,this.diameter);
         noStroke();
     }
 
@@ -35,13 +35,23 @@ beweeg() {
 var eiland = {
     x: 450,
     y: 450,
-    diameter: 150,
+    diameter: 250,
+    kleur: 'blue',
 
 
     teken() {
+        fill(this.kleur);
         ellipse(this.x,this.y,this.diameter);
-        fill('white');
-       
+         noStroke();
+    },
+
+    wordtBezocht(bezoeker) { 
+        if(dist(this.x,this.y,bezoeker.x,bezoeker.y) <= (this.diameter + bezoeker.diameter) /2) {
+            this.kleur = 'red';
+        }
+        else {
+            this.kleur = 'blue';
+        }
     }
 
 
@@ -57,6 +67,5 @@ function draw() {
     stipje.teken();
     stipje.beweeg();
     eiland.teken();
-    eiland.beweeg();
     eiland.wordtBezocht(stipje);
 }

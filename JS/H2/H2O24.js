@@ -1,12 +1,14 @@
 var dobbelSteen = {
   x: 25,
   y: 25,
-  grootte: 400,
+  grootte: 200,
   ogen: null,
   diameterOgen: 50,
   R: null,
   G: null,
   B: null,
+  totaal: 0,
+  
   
   gooi() {
     this.ogen = floor(random(0,6)) + 1;
@@ -22,7 +24,7 @@ var dobbelSteen = {
 
     // hieronder volgt code om de stippen op de juiste plek te krijgen
     
-    fill('white');    
+    fill('black');    
     if (this.ogen!=1) {ellipse(this.x+this.grootte/6*1,this.y+this.grootte/6*1,this.diameterOgen,this.diameterOgen);}
     if (this.ogen==6) {ellipse(this.x+this.grootte/6*3,this.y+this.grootte/6*1,this.diameterOgen,this.diameterOgen);}
     if (this.ogen>3) {ellipse(this.x+this.grootte/6*5,this.y+this.grootte/6*1,this.diameterOgen,this.diameterOgen);}
@@ -33,6 +35,7 @@ var dobbelSteen = {
     pop();
   }
 }
+
 
 function setup() {
   canvas = createCanvas(450,450);
@@ -51,4 +54,6 @@ function draw() {
     dobbelSteen.gooi();
   }
   dobbelSteen.teken();
+  text('totaal' + dobbelSteen.totaal,0,0,0);
+ 
 }
