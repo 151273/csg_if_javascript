@@ -21,6 +21,7 @@ var dobbelSteen = {
     push();
     fill(this.R,this.G,this.B);
     rect(this.x,this.y,this.grootte,this.grootte);
+    this.totaal = this.ogen;
 
     // hieronder volgt code om de stippen op de juiste plek te krijgen
     
@@ -54,6 +55,6 @@ function draw() {
     dobbelSteen.gooi();
   }
   dobbelSteen.teken();
-  text('totaal' + dobbelSteen.totaal,0,0,0);
+  text('totaal: ' + dobbelSteen.totaal,0,350,350);
  
 }
