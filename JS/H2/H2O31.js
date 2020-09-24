@@ -1,4 +1,4 @@
-var dobbelSteen = {
+class dobbelSteen = {
   x: 25,
   y: 25,
   grootte: 200,

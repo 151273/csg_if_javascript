@@ -49,9 +49,15 @@ var jos = {
     this.y = constrain(this.y,0,canvas.height-raster.celGrootte);
   },
 
-  wordtGeraakt(vijand) {
-    return false;
-  },
+  wordtGeraakt(vijand) { 
+      if (vijand.x == this.x && vijand.y == this.y) {
+          return true;
+      }
+      else {
+          return false;
+      } 
+    },
+  
 
   toon() {
     image(this.animatie[this.frameNummer],this.x,this.y,raster.celGrootte,raster.celGrootte);
@@ -75,7 +81,7 @@ var alice = {
   toon() {
     image(this.sprite,this.x,this.y,raster.celGrootte,raster.celGrootte);
   }
-}
+};
 
 
 
@@ -100,11 +106,13 @@ function setup() {
 function draw() {
   background(brug);
   raster.teken();
+  alice.beweeg();
   jos.beweeg();
   jos.toon();
   alice.toon();
 
   if (jos.wordtGeraakt(alice)) {
-    noLoop();
+      noLoop();
   }
+
 }
